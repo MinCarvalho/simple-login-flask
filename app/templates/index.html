@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/cara-negra-de-gato.png') }}" type="image/x-icon">
+    <title>Login</title>
+</head>
+<body>
+    
+    <div class="container">
+        
+        {% if error_message %}
+            <div class="alert alert-danger" role="alert">
+                {{ error_message }}
+            </div>
+        {% endif %}
+
+        <form class="login-form" method="post" action="{{ url_for('login') }}">
+            <h1>Bem Vindo</h1>
+            <input type="email" id="email" name="email" placeholder="e-mail">
+            
+            <input type="password" id="senha" name="senha" placeholder="senha">
+            
+            <button type="submit">ENTRAR</button>
+        </form>
+        
+        <p>Não tem acesso? <a href="{{ url_for('cadastro') }}">cadastre-se</a></p>
+    </div>
+    
+</body>
+</html>
